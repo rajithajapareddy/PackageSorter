@@ -1,0 +1,23 @@
+public class PackageSorter {
+
+  public static String sort(int width, int height, int length, int mass){
+     int volume = width *height *length; 
+
+boolean bulky = volume >= 1_000_000 || width >150 || height >150 || length > 150;
+Boolean heavy = mass >=20;
+
+if(bulky && heavy) {
+  return "REJECTED";
+}else if (bulky || heavy) {
+  return "SPECIAL"; 
+}else {
+  return "STANDARD"; 
+}}
+
+public static void main(string[] args) {
+  System.out.println(sort(100, 100, 100, 19));
+  System.out.println(sort(100, 100, 100, 21));
+  System.out.println(sort(200, 100, 50, 19));
+  System.out.println(sort(200, 200, 50, 25));
+}
+}
